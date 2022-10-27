@@ -288,7 +288,7 @@ On reprend la config précédente, et on ajoutera à la fin de cette partie une 
 🌞**Sur la machine `john`, vous installerez et configurerez un serveur DHCP** (go Google "rocky linux dhcp server").
 
 ```
-[fmaxance@John ~]$ sudo systemctl status dhcpd
+[telos@John ~]$ sudo systemctl status dhcpd
 ● dhcpd.service - DHCPv4 Server Daemon
      Loaded: loaded (/usr/lib/systemd/system/dhcpd.service; disabled; vendor preset: disabled)
      Active: active (running) since Mon 2022-10-24 11:24:23 CEST; 5min ago
@@ -315,7 +315,7 @@ Oct 24 11:29:33 John dhcpd[11591]: DHCPACK on 10.3.1.200 to 08:00:27:fc:89:e9 (B
 ```
 
 ```
-[fmaxance@Bob ~]$ ip a
+[telos@Bob ~]$ ip a
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
@@ -333,7 +333,7 @@ Oct 24 11:29:33 John dhcpd[11591]: DHCPACK on 10.3.1.200 to 08:00:27:fc:89:e9 (B
 🌞**Améliorer la configuration du DHCP**
 
 ```
-[fmaxance@Bob ~]$ ip a
+[telos@Bob ~]$ ip a
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
@@ -348,7 +348,7 @@ Oct 24 11:29:33 John dhcpd[11591]: DHCPACK on 10.3.1.200 to 08:00:27:fc:89:e9 (B
        valid_lft forever preferred_lft forever
 
 
-[fmaxance@Bob ~]$ ping 10.3.2.12 -c 3
+[telos@Bob ~]$ ping 10.3.2.12 -c 3
 PING 10.3.2.12 (10.3.2.12) 56(84) bytes of data.
 64 bytes from 10.3.2.12: icmp_seq=1 ttl=63 time=0.763 ms
 64 bytes from 10.3.2.12: icmp_seq=2 ttl=63 time=0.839 ms
@@ -359,7 +359,7 @@ PING 10.3.2.12 (10.3.2.12) 56(84) bytes of data.
 rtt min/avg/max/mdev = 0.763/0.857/0.971/0.085 ms
 
 
-[fmaxance@Bob ~]$ ping 8.8.8.8 -c 3
+[telos@Bob ~]$ ping 8.8.8.8 -c 3
 PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 64 bytes from 8.8.8.8: icmp_seq=1 ttl=112 time=22.9 ms
 64 bytes from 8.8.8.8: icmp_seq=2 ttl=112 time=22.9 ms
@@ -370,7 +370,7 @@ PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 rtt min/avg/max/mdev = 22.121/22.658/22.936/0.380 ms
 
 
-[fmaxance@Bob ~]$ ping 10.3.1.11 -c 3
+[telos@Bob ~]$ ping 10.3.1.11 -c 3
 PING 10.3.1.11 (10.3.1.11) 56(84) bytes of data.
 64 bytes from 10.3.1.11: icmp_seq=1 ttl=64 time=0.313 ms
 64 bytes from 10.3.1.11: icmp_seq=2 ttl=64 time=0.566 ms
@@ -381,12 +381,12 @@ PING 10.3.1.11 (10.3.1.11) 56(84) bytes of data.
 rtt min/avg/max/mdev = 0.313/0.429/0.566/0.104 ms
 
 
-[fmaxance@Bob ~]$ ip r s
+[telos@Bob ~]$ ip r s
 default via 10.3.1.254 dev enp0s8 proto dhcp src 10.3.1.200 metric 100
 10.3.1.0/24 dev enp0s8 proto kernel scope link src 10.3.1.200 metric 100
 
 
-[fmaxance@Bob ~]$ dig
+[telos@Bob ~]$ dig
 
 ; <<>> DiG 9.16.23-RH <<>>
 ;; global options: +cmd
@@ -419,7 +419,7 @@ default via 10.3.1.254 dev enp0s8 proto dhcp src 10.3.1.200 metric 100
 ;; WHEN: Mon Oct 24 12:03:01 CEST 2022
 ;; MSG SIZE  rcvd: 239
 
-[fmaxance@Bob ~]$ ping google.com
+[telos@Bob ~]$ ping google.com
 PING google.com (216.58.214.78) 56(84) bytes of data.
 64 bytes from fra15s10-in-f14.1e100.net (216.58.214.78): icmp_seq=1 ttl=112 time=21.3 ms
 64 bytes from fra15s10-in-f14.1e100.net (216.58.214.78): icmp_seq=2 ttl=112 time=24.4 ms
@@ -433,7 +433,7 @@ PING google.com (216.58.214.78) 56(84) bytes of data.
 [source](./tp3_dhcp.pcap)
 
 ```
-[fmaxance@Bob ~]$ ip a
+[telos@Bob ~]$ ip a
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
