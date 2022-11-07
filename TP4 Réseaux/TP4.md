@@ -44,7 +44,7 @@ Connexions actives
   TCP    10.33.16.79:62306      104.199.65.124:4070    ESTABLISHED
  [Spotify.exe]
 ```
-[Spotify](tp4_spotify.pcapng)
+[Spotify](./tp4_spotify.pcapng)
 
 ```
 PS C:\Users\alanw> netstat -n -b
@@ -55,9 +55,9 @@ Connexions actives
   TCP    10.33.16.79:53231      199.232.58.249:443     ESTABLISHED
  [Discord.exe]
 ```
-[Discord](tp4_discord.pcapng)
+[Discord](./tp4_discord.pcapng)
 
-[Netflix](tp4_netflix.pcapng)
+[Netflix](./tp4_netflix.pcapng)
 
 
 
